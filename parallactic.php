@@ -30,6 +30,13 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+// Load dotenv variables
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+// Load composer autoload
+require 'vendor/autoload.php';
+
 /**
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org

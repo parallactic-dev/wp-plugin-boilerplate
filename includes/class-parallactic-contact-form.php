@@ -1,4 +1,7 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 class Parallactic_Contact_Form {
 
@@ -62,16 +65,17 @@ class Parallactic_Contact_Form {
         // create email body from fields
         $message = '';
         if ($fields) {
-            $message .= __('Message from contact form from', 'parallactic') . get_bloginfo('wpurl') . ": – /n/n";
-            foreach ($fields as $key => $field) {
-                if (isset($request_data['fields'][$field['label']])) {
-                    $requst_field = $request_data['fields'][$field['label']];
-                    $message .= $field['label'] . ': ' . $requst_field . "/n";
+            $message .= __('Message from contact form from', 'parallactic') . ' ' . get_bloginfo('name') . ": \r\n\n";
+            foreach ($fields as $field) {
+                $field_name = strtolower(str_replace(' ', '-', $field['label']));
+                if (isset($request_data['fields'][$field_name])) {
+                    $requst_field = $request_data['fields'][$field_name];
+                    $message .= $field['label'] . ': ' . $requst_field . "\r\n";
                 } else {
-                    if (!$field['label']) {
-                        $message .= $field['label'] . ": – /n";
+                    if (!$field['mandatory']) {
+                        $message .= $field['label'] . ": – \r\n";
                     } else {
-                        return new WP_Error('contact_form_missing_madatory_field', 'Missing madatory field "' . $field['label'] . '".', array('status' => 403));
+                        return new WP_Error('contact_form_missing_madatory_field', 'Missing madatory field "' . $field_name . '".', array('status' => 403));
                     }
                 }
             }
@@ -80,15 +84,36 @@ class Parallactic_Contact_Form {
         }
         
         // create and send email
-        $subject = __('Contact Form from', 'parallactic') . ' ' . get_bloginfo('name');
-        $headers = array(
-            'Content-type: text/html',
-            'From: ' . get_bloginfo('name') . ' <' . get_bloginfo('admin_email') . '>',
-        );
-        $email_send = wp_mail($email_to, $subject, $message, $headers);
-        if (!$email_send) {
+        $mail = new PHPMailer(true);
+        $subject = __('Contact Form via', 'parallactic') . ' ' . get_bloginfo('url');
+
+        try {
+            //Server settings
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            $mail->isSMTP();         
+            $mail->Host = $_ENV['SMTP_HOST'];
+            $mail->SMTPAuth = true;
+            $mail->Username = $_ENV['SMTP_USERNAME'];
+            $mail->Password = $_ENV['SMTP_PASSWORD'];
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Port = $_ENV['SMTP_PORT'];
+
+            //Recipients
+            $mail->setFrom(get_bloginfo('admin_email'), get_bloginfo('name'));
+            $mail->addAddress($email_to);
+            $mail->addReplyTo($email_to);
+
+            //Content
+            $mail->CharSet = 'UTF-8';
+            $mail->isHTML(false);
+            $mail->Subject = $subject;
+            $mail->Body = $message;
+
+            $mail->send();
+        } catch (Exception $e) {
             return new WP_Error('contact_form_send_error', 'Email send error.', array('status' => 500));
         }
+
 
         return new WP_REST_Response('success', 200);
     }
