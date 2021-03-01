@@ -125,7 +125,7 @@ class Parallactic {
 		/**
 		 * The class responsible for all SEO features
 		 */
-		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-parallactic-seo.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-parallactic-meta.php';
 
 		/**
 		 * The class responsible for all content fields for pages
@@ -142,7 +142,7 @@ class Parallactic {
 		 */
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-parallactic-contact-form.php';
 
-        new Parallactic_SEO();
+        new Parallactic_Meta();
 		new Parallactic_Page();
 		new Parallactic_ACF_REST();
 		new Parallactic_Contact_Form();

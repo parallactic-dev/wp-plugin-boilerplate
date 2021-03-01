@@ -1,6 +1,6 @@
 <?php
 
-class Parallactic_SEO {
+class Parallactic_Meta {
 
 	public function __construct() {
         add_action('acf/init', array($this, 'add_custom_fields'));
@@ -12,13 +12,13 @@ class Parallactic_SEO {
         if (!function_exists('acf_add_local_field_group')) return;
         
         acf_add_local_field_group(array(
-            'key' => 'group_seo',
+            'key' => 'group_meta',
             'title' => 'Meta Data',
             'fields' => array(
                 array(
-                    'key' => 'seo_title',
+                    'key' => 'meta_title',
                     'label' => 'Meta Title',
-                    'name' => 'seo_title',
+                    'name' => 'meta_title',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
@@ -35,9 +35,9 @@ class Parallactic_SEO {
                     'maxlength' => '',
                 ),
                 array(
-                    'key' => 'seo_description',
+                    'key' => 'meta_description',
                     'label' => 'Meta Description',
-                    'name' => 'seo_description',
+                    'name' => 'meta_description',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
@@ -53,10 +53,34 @@ class Parallactic_SEO {
                     'append' => '',
                     'maxlength' => '',
                 ),
+                array(
+                    'key' => 'meta_image',
+                    'label' => 'Preview Image',
+                    'name' => 'meta_image',
+                    'type' => 'image',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'return_format' => 'array',
+                    'preview_size' => 'medium',
+                    'library' => 'all',
+                    'min_width' => '',
+                    'min_height' => '',
+                    'min_size' => '',
+                    'max_width' => '',
+                    'max_height' => '',
+                    'max_size' => '',
+                    'mime_types' => '',
+                ),
                 // array(
-                //     'key' => 'seo_include_in_sitemap',
-                //     'label' => 'SEO Include in Sitemap',
-                //     'name' => 'seo_include_in_sitemap',
+                //     'key' => 'meta_include_in_sitemap',
+                //     'label' => 'meta Include in Sitemap',
+                //     'name' => 'meta_include_in_sitemap',
                 //     'type' => 'true_false',
                 //     'instructions' => '',
                 //     'required' => 0,
