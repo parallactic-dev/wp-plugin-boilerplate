@@ -16,7 +16,8 @@ It palys perfectly together with the [vuejs WordPress Theme Boilerplate](https:/
 
 1. **Clone** the repo inside your `wp-content/plugin/` directory
 2. **Change** plugin **name, description ...**
-3. **Install ACF plugin** in your WordPress instance.
-4. You may want to disable the Gutenberg Editor to have a better experience with ACF and content blocks.
+3. **Install** composer dependencies `composer install`
+4. **Install ACF plugin** in your WordPress instance.
+5. You may want to disable the Gutenberg Editor to have a better experience with ACF and content blocks.
    You could use this [plugin](https://wordpress.org/plugins/disable-gutenberg/) to achieve a proper disabling.
-5. **Activate the plugin** in your WordPress instance.
+6. **Activate the plugin** in your WordPress instance.
