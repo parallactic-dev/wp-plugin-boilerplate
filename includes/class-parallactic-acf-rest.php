@@ -48,7 +48,7 @@ class Parallactic_ACF_REST
      *
      * @since 	   1.0.0
      */
-    protected function add_acf_fields($post_id)
+    public function add_acf_fields($post_id)
     {
         $returnData = array();
         $fields = get_fields($post_id);

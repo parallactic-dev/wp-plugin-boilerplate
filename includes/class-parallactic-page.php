@@ -1,12 +1,15 @@
 <?php
+use \Parallactic_ACF_REST;
 
 class Parallactic_Page {
+    private $acf_rest;
 
 	public function __construct() {
         add_action('acf/init', array($this, 'add_custom_fields'));
+        add_action('rest_api_init', array($this, 'register_rest_endpoints'));
 
-        $this->add_image_sizes();
-
+        $this->acf_rest = new Parallactic_ACF_REST();
+    
 	}
     
     public function add_custom_fields() {
@@ -329,7 +332,7 @@ class Parallactic_Page {
             'label_placement' => 'top',
             'instruction_placement' => 'label',
             'hide_on_screen' => array(
-                // 0 => 'the_content',
+                0 => 'the_content',
                 // 1 => 'excerpt',
                 // 2 => 'discussion',
                 // 3 => 'comments',
@@ -347,8 +350,28 @@ class Parallactic_Page {
 
     }
 
-    private function add_image_sizes() {
-        add_image_size('xl', 1280, 1440, false);
+    public function register_rest_endpoints()
+    {
+        register_rest_route('wp/v2', 'frontpage', array(
+            'methods' => 'GET',
+            'callback' => array($this, 'get_frontpage'),
+            'permission_callback' => '__return_true',
+        ));
+    }
+
+    public function get_frontpage()
+    {
+        $post_id = get_option('page_on_front');    
+        $post = $post_id > 0 ? get_post($post_id) : null;  
+
+        if (!is_a($post, '\WP_Post')) {
+            return new WP_Error('frontpage', 'No static page set.', array('status' => 404));
+        }
+
+        $post = $post->to_array();
+        $post['acf'] = $this->acf_rest->add_acf_fields($post_id);
+
+        return new WP_REST_Response($post, 200);
     }
 
 }

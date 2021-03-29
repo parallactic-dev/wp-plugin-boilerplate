@@ -19,9 +19,10 @@ class Parallactic_Contact_Form {
         register_rest_route('wp/v2', 'contact-forms', array(
             'methods' => 'POST',
             'callback' => array($this, 'handle_post_request'),
-            'permission_callback' => function(WP_REST_Request $request) {
-                return wp_verify_nonce($request->get_header('X-WP-Nonce'), 'wp_rest');
-            },
+            'permission_callback' => '__return_true',
+            // 'permission_callback' => function(WP_REST_Request $request) {
+            //     return wp_verify_nonce($request->get_header('X-WP-Nonce'), 'wp_rest');
+            // },
         ));
     }
 
