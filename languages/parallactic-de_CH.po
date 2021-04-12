@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Parallactic WordPress Plugin\n"
+"POT-Creation-Date: 2021-04-12 11:58+0200\n"
+"PO-Revision-Date: 2021-04-12 12:00+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_CH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: vendor\n"
+"X-Poedit-SearchPathExcluded-1: languages\n"
+
+#: includes/class-parallactic-contact-form.php:69
+msgid "Message from contact form from"
+msgstr "Nachricht via Kontaktformular von"
+
+#: includes/class-parallactic-contact-form.php:89
+msgid "Contact Form via"
+msgstr "Kontaktformular via"
+
+#: includes/class-parallactic-meta.php:20
+msgid "Meta Information"
+msgstr "Meta Informationen"
+
+#: includes/class-parallactic-meta.php:24
+msgid "Meta Title"
+msgstr "Titel"
+
+#: includes/class-parallactic-meta.php:27
+msgid "Leave this field empty if it should be the same as the page title"
+msgstr "Dieses Feld leer lassen, wenn gleich wie Seitentitel"
+
+#: includes/class-parallactic-meta.php:43
+msgid "Meta Description"
+msgstr "Beschreibung"
+
+#: includes/class-parallactic-meta.php:62
+msgid "Preview Image"
+msgstr "Vorschaubild"
+
+#: includes/class-parallactic-meta.php:86
+msgid "Sitemap"
+msgstr "Sitemap"
+
+#: includes/class-parallactic-meta.php:97
+msgid "Exclude from sitemap"
+msgstr "Von Sitemap ausschliessen"
+
+#: includes/class-parallactic-page.php:20
+msgid "Page Content"
+msgstr "Seiteninhalt"
+
+#: includes/class-parallactic-page.php:24
+msgid "Content Blocks"
+msgstr "Inhaltblocks"
+
+#: includes/class-parallactic-page.php:39
+msgid "Text Block"
+msgstr "Textblock"
+
+#: includes/class-parallactic-page.php:44
+#: includes/class-parallactic-page.php:248
+msgid "Text"
+msgstr "Text"
+
+#: includes/class-parallactic-page.php:68
+#: includes/class-parallactic-page.php:73
+msgid "Image"
+msgstr "Bild"
+
+#: includes/class-parallactic-page.php:97
+msgid "Caption"
+msgstr "Bildunterschrift"
+
+#: includes/class-parallactic-page.php:121
+msgid "Contact Form"
+msgstr "Kontaktformular"
+
+#: includes/class-parallactic-page.php:126
+msgid "Form Title"
+msgstr "Formulartitel"
+
+#: includes/class-parallactic-page.php:144
+msgid "Email Receiver"
+msgstr "E-Mail-Empfänger"
+
+#: includes/class-parallactic-page.php:162
+msgid "Button Label"
+msgstr "Button-Label"
+
+#: includes/class-parallactic-page.php:180
+msgid "Confirm Message"
+msgstr "Bestätigungsnachricht"
+
+#: includes/class-parallactic-page.php:198
+msgid "Form Fields"
+msgstr "Formularfelder"
+
+#: includes/class-parallactic-page.php:213
+msgid "Add Field"
+msgstr "Feld hinzufügen"
+
+#: includes/class-parallactic-page.php:217
+msgid "Field Label"
+msgstr "Feld-Label"
+
+#: includes/class-parallactic-page.php:236
+msgid "Field Type"
+msgstr "Feldtyp"
+
+#: includes/class-parallactic-page.php:249
+msgid "Number"
+msgstr "Nummer"
+
+#: includes/class-parallactic-page.php:250
+msgid "Email"
+msgstr "E-Mail"
+
+#: includes/class-parallactic-page.php:251
+msgid "Phone Number"
+msgstr "Telefonnummer"
+
+#: includes/class-parallactic-page.php:252
+msgid "Textarea"
+msgstr "Textbereich"
+
+#: includes/class-parallactic-page.php:264
+msgid "Mandatory"
+msgstr "Pflichtfeld"
+
+#: includes/class-parallactic-page.php:275
+msgid "Make this field mandatory"
+msgstr "Das ist ein Pflichtfeld"
+
+#: includes/class-parallactic-page.php:283
+msgid "Validation Message"
+msgstr "Validierungsnachricht"
+
+#: includes/class-parallactic-page.php:315
+msgid "Add Content Block"
+msgstr "Inhaltsblock hinzufügen"

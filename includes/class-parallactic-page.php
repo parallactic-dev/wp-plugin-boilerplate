@@ -17,11 +17,11 @@ class Parallactic_Page {
 
         acf_add_local_field_group(array(
             'key' => 'group_page_content',
-            'title' => 'Page Content',
+            'title' => __('Page Content', 'parallactic'),
             'fields' => array(
                 array(
                     'key' => 'field_page_content',
-                    'label' => 'Content Blocks',
+                    'label' => __('Content Blocks', 'parallactic'),
                     'name' => 'page_content',
                     'type' => 'flexible_content',
                     'instructions' => '',
@@ -36,12 +36,12 @@ class Parallactic_Page {
                         'layout_page_text_block' => array(
                             'key' => 'layout_page_text_block',
                             'name' => 'text_block',
-                            'label' => 'Text Block',
+                            'label' => __('Text Block', 'parallactic'),
                             'display' => 'block',
                             'sub_fields' => array(
                                 array(
                                     'key' => 'field_page_text_block_text',
-                                    'label' => 'Text',
+                                    'label' => __('Text', 'parallactic'),
                                     'name' => 'text',
                                     'type' => 'wysiwyg',
                                     'instructions' => '',
@@ -65,12 +65,12 @@ class Parallactic_Page {
                         'layout_page_image_block' => array(
                             'key' => 'layout_page_image_block',
                             'name' => 'image_block',
-                            'label' => 'Image',
+                            'label' => __('Image', 'parallactic'),
                             'display' => 'block',
                             'sub_fields' => array(
                                 array(
                                     'key' => 'field_page_image_block_image',
-                                    'label' => 'Image',
+                                    'label' => __('Image', 'parallactic'),
                                     'name' => 'image',
                                     'type' => 'image',
                                     'instructions' => '',
@@ -94,7 +94,7 @@ class Parallactic_Page {
                                 ),
                                 array(
                                     'key' => 'field_page_image_block_caption',
-                                    'label' => 'Caption',
+                                    'label' => __('Caption', 'parallactic'),
                                     'name' => 'caption',
                                     'type' => 'text',
                                     'instructions' => '',
@@ -118,12 +118,12 @@ class Parallactic_Page {
                         'layout_page_contact_form' => array(
                             'key' => 'layout_page_contact_form',
                             'name' => 'contact_form',
-                            'label' => 'Contact Form',
+                            'label' => __('Contact Form', 'parallactic'),
                             'display' => 'block',
                             'sub_fields' => array(
                                 array(
                                     'key' => 'field_page_contact_form_title',
-                                    'label' => 'Form Title',
+                                    'label' => __('Form Title', 'parallactic'),
                                     'name' => 'title',
                                     'type' => 'text',
                                     'instructions' => '',
@@ -141,7 +141,7 @@ class Parallactic_Page {
                                 ),
                                 array(
                                     'key' => 'field_page_contact_form_email',
-                                    'label' => 'Email Receiver',
+                                    'label' => __('Email Receiver', 'parallactic'),
                                     'name' => 'email_to',
                                     'type' => 'email',
                                     'instructions' => '',
@@ -159,7 +159,7 @@ class Parallactic_Page {
                                 ),
                                 array(
                                     'key' => 'field_page_contact_form_button_label',
-                                    'label' => 'Button Label',
+                                    'label' => __('Button Label', 'parallactic'),
                                     'name' => 'button_label',
                                     'type' => 'text',
                                     'instructions' => '',
@@ -177,7 +177,7 @@ class Parallactic_Page {
                                 ),
                                 array(
                                     'key' => 'field_page_contact_form_confirm_message',
-                                    'label' => 'Confirm Message',
+                                    'label' => __('Confirm Message', 'parallactic'),
                                     'name' => 'confirm_message',
                                     'type' => 'text',
                                     'instructions' => '',
@@ -195,7 +195,7 @@ class Parallactic_Page {
                                 ),
                                 array(
                                     'key' => 'field_page_contact_form_fields',
-                                    'label' => 'Form Fields',
+                                    'label' => __('Form Fields', 'parallactic'),
                                     'name' => 'fields',
                                     'type' => 'repeater',
                                     'instructions' => '',
@@ -210,11 +210,11 @@ class Parallactic_Page {
                                     'min' => 0,
                                     'max' => 0,
                                     'layout' => 'block',
-                                    'button_label' => 'Add Field',
+                                    'button_label' => __('Add Field', 'parallactic'),
                                     'sub_fields' => array(
                                         array(
                                             'key' => 'field_page_contact_form_label',
-                                            'label' => 'Field Label',
+                                            'label' => __('Field Label', 'parallactic'),
                                             'name' => 'label',
                                             'type' => 'text',
                                             'instructions' => '',
@@ -233,7 +233,7 @@ class Parallactic_Page {
                                         ),
                                         array(
                                             'key' => 'field_page_contact_form_type',
-                                            'label' => 'Field Type',
+                                            'label' => __('Field Type', 'parallactic'),
                                             'name' => 'type',
                                             'type' => 'select',
                                             'instructions' => '',
@@ -245,11 +245,11 @@ class Parallactic_Page {
                                                 'id' => '',
                                             ),
                                             'choices' => array(
-                                                'text' => 'Text',
-                                                'number' => 'Number',
-                                                'email' => 'Email',
-                                                'tel' => 'Phone Number',
-                                                'textarea' => 'Textarea',
+                                                'text' => __('Text', 'parallactic'),
+                                                'number' => __('Number', 'parallactic'),
+                                                'email' => __('Email', 'parallactic'),
+                                                'tel' => __('Phone Number', 'parallactic'),
+                                                'textarea' => __('Textarea', 'parallactic'),
                                             ),
                                             'default_value' => 'text',
                                             'allow_null' => 0,
@@ -261,7 +261,7 @@ class Parallactic_Page {
                                         ),
                                         array(
                                             'key' => 'field_page_contact_form_mandatory',
-                                            'label' => 'Mandatory',
+                                            'label' => __('Mandatory', 'parallactic'),
                                             'name' => 'mandatory',
                                             'type' => 'true_false',
                                             'instructions' => '',
@@ -272,7 +272,7 @@ class Parallactic_Page {
                                                 'class' => '',
                                                 'id' => '',
                                             ),
-                                            'message' => 'Make this field mandatory',
+                                            'message' => __('Make this field mandatory', 'parallactic'),
                                             'default_value' => 0,
                                             'ui' => 0,
                                             'ui_on_text' => '',
@@ -280,7 +280,7 @@ class Parallactic_Page {
                                         ),
                                         array(
                                             'key' => 'field_page_contact_form_validation',
-                                            'label' => 'Validation Message',
+                                            'label' => __('Validation Message', 'parallactic'),
                                             'name' => 'validation_message',
                                             'type' => 'text',
                                             'instructions' => '',
@@ -312,7 +312,7 @@ class Parallactic_Page {
                             'max' => '',
                         ),
                     ),
-                    'button_label' => 'Add Content Block',
+                    'button_label' => __('Add Content Block', 'parallactic'),
                     'min' => '',
                     'max' => '',
                 ),

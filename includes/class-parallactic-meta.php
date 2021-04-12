@@ -17,14 +17,14 @@ class Parallactic_Meta {
         
         acf_add_local_field_group(array(
             'key' => 'group_meta',
-            'title' => 'Meta Information',
+            'title' => __('Meta Information', 'parallactic'),
             'fields' => array(
                 array(
                     'key' => 'meta_title',
-                    'label' => 'Meta Title',
+                    'label' => __('Meta Title', 'parallactic'),
                     'name' => 'meta_title',
                     'type' => 'text',
-                    'instructions' => 'Leave this field empty if it should be the same as the page title',
+                    'instructions' => __('Leave this field empty if it should be the same as the page title', 'parallactic'),
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
@@ -40,7 +40,7 @@ class Parallactic_Meta {
                 ),
                 array(
                     'key' => 'meta_description',
-                    'label' => 'Meta Description',
+                    'label' => __('Meta Description', 'parallactic'),
                     'name' => 'meta_description',
                     'type' => 'text',
                     'instructions' => '',
@@ -59,7 +59,7 @@ class Parallactic_Meta {
                 ),
                 array(
                     'key' => 'meta_image',
-                    'label' => 'Preview Image',
+                    'label' => __('Preview Image', 'parallactic'),
                     'name' => 'meta_image',
                     'type' => 'image',
                     'instructions' => '',
@@ -83,7 +83,7 @@ class Parallactic_Meta {
                 ),
                 array(
                     'key' => 'meta_exclude_from_sitemap',
-                    'label' => 'Sitemap',
+                    'label' => __('Sitemap', 'parallactic'),
                     'name' => 'meta_exclude_from_sitemap',
                     'type' => 'true_false',
                     'instructions' => '',
@@ -94,7 +94,7 @@ class Parallactic_Meta {
                         'class' => '',
                         'id' => '',
                     ),
-                    'message' => 'Exclude from sitemap',
+                    'message' => __('Exclude from sitemap', 'parallactic'),
                     'default_value' => 0,
                     'ui' => 0,
                     'translations' => 'copy_once',
