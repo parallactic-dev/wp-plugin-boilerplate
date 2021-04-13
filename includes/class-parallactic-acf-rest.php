@@ -33,8 +33,7 @@ class Parallactic_ACF_REST
                     return $data;
                 }
 
-                // $response_data = array_merge($response_data, $this->add_acf_fields($post->ID));
-                $response_data['acf'] = $this->add_acf_fields($post->ID);
+                $response_data['fields'] = $this->add_acf_fields($post->ID);
 
                 //Commit the API result var to the API endpoint
                 $data->set_data($response_data);
@@ -71,7 +70,7 @@ class Parallactic_ACF_REST
 
             // get fileds if a wp_post
             elseif (gettype($value) === 'object' && get_class($value) === 'WP_Post') {
-                $return_value[$key] = array_merge($value->to_array(), $this->add_acf_fields($value->ID));
+                $return_value[$key] = array_merge($value->to_array(), array('fields' => $this->add_acf_fields($value->ID)));
             }
 
             // else return just plain data

@@ -117,6 +117,13 @@ class Parallactic_Meta {
                         'value' => 'page',
                     ),
                 ),
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'person',
+                    ),
+                ),
             ),
             'menu_order' => 99,
             'position' => 'normal',

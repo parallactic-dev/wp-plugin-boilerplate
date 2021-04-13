@@ -311,6 +311,59 @@ class Parallactic_Page {
                             'min' => '',
                             'max' => '',
                         ),
+                        'layout_page_people_overview' => array(
+                            'key' => 'layout_page_people_overview',
+                            'name' => 'people_overview',
+                            'label' => __('People Overview', 'parallactic'),
+                            'display' => 'block',
+                            'sub_fields' => array(
+                                array(
+                                    'key' => 'field_page_people_overview_people',
+                                    'label' => __('People', 'parallactic'),
+                                    'name' => 'people',
+                                    'type' => 'repeater',
+                                    'instructions' => '',
+                                    'required' => 0,
+                                    'conditional_logic' => 0,
+                                    'wrapper' => array(
+                                        'width' => '',
+                                        'class' => '',
+                                        'id' => '',
+                                    ),
+                                    'collapsed' => '',
+                                    'min' => 0,
+                                    'max' => 0,
+                                    'layout' => 'table',
+                                    'button_label' => __('Add Person', 'parallactic'),
+                                    'sub_fields' => array(
+                                        array(
+                                            'key' => 'field_page_people_overview_person',
+                                            'label' => __('Person', 'parallactic'),
+                                            'name' => 'person',
+                                            'type' => 'post_object',
+                                            'instructions' => '',
+                                            'required' => 0,
+                                            'conditional_logic' => 0,
+                                            'wrapper' => array(
+                                                'width' => '',
+                                                'class' => '',
+                                                'id' => '',
+                                            ),
+                                            'post_type' => array(
+                                                0 => 'person',
+                                            ),
+                                            'taxonomy' => '',
+                                            'allow_null' => 0,
+                                            'multiple' => 0,
+                                            'return_format' => 'object',
+                                            'ui' => 1,
+                                        ),
+                                    ),
+                                ),
+                            ),
+                            'min' => '',
+                            'max' => '',
+                        ),
                     ),
                     'button_label' => __('Add Content Block', 'parallactic'),
                     'min' => '',
@@ -369,7 +422,7 @@ class Parallactic_Page {
         }
 
         $post = $post->to_array();
-        $post['acf'] = $this->acf_rest->add_acf_fields($post_id);
+        $post['fields'] = $this->acf_rest->add_acf_fields($post_id);
 
         return new WP_REST_Response($post, 200);
     }

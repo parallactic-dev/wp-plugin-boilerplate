@@ -142,10 +142,16 @@ class Parallactic {
 		 */
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-parallactic-contact-form.php';
 
+		/**
+		 * The class responsible to attach all ACF fields to the REST requests
+		 */
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-parallactic-person.php';
+
         new Parallactic_Meta();
 		new Parallactic_Page();
 		new Parallactic_ACF_REST();
 		new Parallactic_Contact_Form();
+		new Parallactic_Person();
 		
 		$this->loader = new Parallactic_Loader();
 

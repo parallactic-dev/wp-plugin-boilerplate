@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Parallactic WordPress Plugin\n"
-"POT-Creation-Date: 2021-04-12 11:58+0200\n"
-"PO-Revision-Date: 2021-04-12 12:00+0200\n"
+"POT-Creation-Date: 2021-04-13 09:09+0200\n"
+"PO-Revision-Date: 2021-04-13 09:10+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_CH\n"
@@ -120,6 +120,7 @@ msgid "Number"
 msgstr "Nummer"
 
 #: includes/class-parallactic-page.php:250
+#: includes/class-parallactic-person.php:167
 msgid "Email"
 msgstr "E-Mail"
 
@@ -146,3 +147,151 @@ msgstr "Validierungsnachricht"
 #: includes/class-parallactic-page.php:315
 msgid "Add Content Block"
 msgstr "Inhaltsblock hinzufügen"
+
+#: includes/class-parallactic-person.php:15
+#: includes/class-parallactic-person.php:17
+#: includes/class-parallactic-person.php:50
+msgid "People"
+msgstr "Personen"
+
+#: includes/class-parallactic-person.php:16
+#: includes/class-parallactic-person.php:40
+#: includes/class-parallactic-person.php:82
+msgid "Person"
+msgstr "Person"
+
+#: includes/class-parallactic-person.php:18
+msgid "All People"
+msgstr "Alle Personen"
+
+#: includes/class-parallactic-person.php:19
+msgid "Add New"
+msgstr "Erstellen"
+
+#: includes/class-parallactic-person.php:20
+msgid "Add New Person"
+msgstr "Neue Person erstellen"
+
+#: includes/class-parallactic-person.php:21
+msgid "Edit Person"
+msgstr "Person bearbeiten"
+
+#: includes/class-parallactic-person.php:22
+msgid "New Person"
+msgstr "Neue Person"
+
+#: includes/class-parallactic-person.php:23
+msgid "View Person"
+msgstr "Person anzeigen"
+
+#: includes/class-parallactic-person.php:24
+msgid "View People"
+msgstr "Personen anzeigen"
+
+#: includes/class-parallactic-person.php:25
+msgid "Search People"
+msgstr "Personen durchsuchen"
+
+#: includes/class-parallactic-person.php:26
+msgid "No Person found"
+msgstr "Keine Person gefunden"
+
+#: includes/class-parallactic-person.php:27
+msgid "No Person found in Trash"
+msgstr "Keine Personen im Papierkorb gefunden"
+
+#: includes/class-parallactic-person.php:28
+#: includes/class-parallactic-person.php:46
+msgid "Parent Person"
+msgstr "Übergeordnete Person"
+
+#: includes/class-parallactic-person.php:29
+msgid "Featured image for this person"
+msgstr "Vorschaubild für diese Person"
+
+#: includes/class-parallactic-person.php:30
+msgid "Set featured image for this person"
+msgstr "Vorschaubild für diese Person setzen"
+
+#: includes/class-parallactic-person.php:31
+msgid "Remove featured image for this person"
+msgstr "Vorschaubild für diese Person entfernen"
+
+#: includes/class-parallactic-person.php:32
+msgid "Use as feature image for this person"
+msgstr "Als Vorschaubild für diese Person verwenden"
+
+#: includes/class-parallactic-person.php:33
+msgid "People Archives"
+msgstr "Personenarchiv"
+
+#: includes/class-parallactic-person.php:34
+msgid "Insert into person"
+msgstr "In Person einfügen"
+
+#: includes/class-parallactic-person.php:35
+msgid "Upload to this person"
+msgstr "In diese Person hochladen"
+
+#: includes/class-parallactic-person.php:36
+msgid "Filter people list"
+msgstr "Personenliste filtern"
+
+#: includes/class-parallactic-person.php:37
+msgid "People list navigation"
+msgstr "Peronen-Liste-Navigation"
+
+#: includes/class-parallactic-person.php:38
+msgid "People list"
+msgstr "Personenliste"
+
+#: includes/class-parallactic-person.php:39
+msgid "People Attributes"
+msgstr "Personenattribute"
+
+#: includes/class-parallactic-person.php:41
+msgid "Person published"
+msgstr "Person veröffentlicht"
+
+#: includes/class-parallactic-person.php:42
+msgid "Person published privately"
+msgstr "Person privat veröffentlicht"
+
+#: includes/class-parallactic-person.php:43
+msgid "Person reverted to draft"
+msgstr "Person in Entwurf umgewandelt"
+
+#: includes/class-parallactic-person.php:44
+msgid "Person scheduled"
+msgstr "Person für Veröffentlichung geplant"
+
+#: includes/class-parallactic-person.php:45
+msgid "Person updated"
+msgstr "Person aktualisiert"
+
+#: includes/class-parallactic-person.php:86
+msgid "Name"
+msgstr "Name"
+
+#: includes/class-parallactic-person.php:105
+msgid "Role"
+msgstr "Funktion"
+
+#: includes/class-parallactic-person.php:124
+msgid "Biography"
+msgstr "Biografie"
+
+#: includes/class-parallactic-person.php:143
+msgid "Portrait"
+msgstr "Portrait"
+
+#: includes/class-parallactic-person.php:185
+msgid "Phone"
+msgstr "Telefon"
+
+#: includes/class-parallactic-person.php:204
+msgid "LinkedIn"
+msgstr "LinikedIn"
+
+#~ msgid "E-Mail"
+#~ msgstr "E-Mail"
