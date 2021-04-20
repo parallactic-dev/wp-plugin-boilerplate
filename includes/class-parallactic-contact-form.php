@@ -1,8 +1,4 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
 class Parallactic_Contact_Form {
 
     public function __construct() 
@@ -85,36 +81,22 @@ class Parallactic_Contact_Form {
         }
         
         // create and send email
-        $mail = new PHPMailer(true);
         $subject = __('Contact Form via', 'parallactic') . ' ' . get_bloginfo('url');
+        $headers = array(
+            'Content-type: text/html',
+            'From: <' . get_bloginfo('admin_email') . '> ' . get_bloginfo('name'),
+        );
 
         try {
-            //Server settings
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-            $mail->isSMTP();         
-            $mail->Host = $_ENV['SMTP_HOST'];
-            $mail->SMTPAuth = true;
-            $mail->Username = $_ENV['SMTP_USERNAME'];
-            $mail->Password = $_ENV['SMTP_PASSWORD'];
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-            $mail->Port = $_ENV['SMTP_PORT'];
-
-            //Recipients
-            $mail->setFrom(get_bloginfo('admin_email'), get_bloginfo('name'));
-            $mail->addAddress($email_to);
-            $mail->addReplyTo($email_to);
-
-            //Content
-            $mail->CharSet = 'UTF-8';
-            $mail->isHTML(false);
-            $mail->Subject = $subject;
-            $mail->Body = $message;
-
-            $mail->send();
+            wp_mail(
+                $email_to,
+                $subject,
+                $message,
+                $headers
+            );
         } catch (Exception $e) {
             return new WP_Error('contact_form_send_error', 'Email send error.', array('status' => 500));
         }
-
 
         return new WP_REST_Response('success', 200);
     }
