@@ -1,4 +1,5 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
 
 /**
  * The file that defines the core plugin class
@@ -245,5 +246,24 @@ class Parallactic {
 	public function get_version() {
 		return $this->version;
 	}
+
+	/**
+	 * Set php mailer config.
+	 *
+	 * @since     1.0.0
+	 * @param     PHPMailer $mailer
+	 */
+	public function mailer_config(PHPMailer $mailer) {
+        $mailer->IsSMTP();
+        $mailer->Host = 'smtp.postmarkapp.com';
+        $mailer->Port = 587;
+        $mailer->SMTPAuth = true;
+        $mailer->Username = '00000000-0000-0000-0000-000000000000';
+        $mailer->Password = '00000000-0000-0000-0000-000000000000';
+        $mailer->SMTPSecure = 'tls';
+        $mailer->AuthType = 'PLAIN';
+        $mailer->SMTPDebug = 0;
+        $mailer->CharSet  = 'utf-8';
+    }
 
 }
