@@ -82,25 +82,6 @@ class Parallactic_Person {
             'title' => __('Person', 'parallactic'),
             'fields' => array(
                 array(
-                    'key' => 'person_name',
-                    'label' => __('Name', 'person'),
-                    'name' => 'name',
-                    'type' => 'text',
-                    'instructions' => '',
-                    'required' => 1,
-                    'conditional_logic' => 0,
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'default_value' => '',
-                    'placeholder' => '',
-                    'prepend' => '',
-                    'append' => '',
-                    'maxlength' => '',
-                ),
-                array(
                     'key' => 'person_role',
                     'label' => __('Role', 'person'),
                     'name' => 'role',
