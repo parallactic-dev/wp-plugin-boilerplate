@@ -1,6 +1,0 @@
-{
-    "require-dev": {
-        "paulthewalton/acf-stubs": "^5.8"
-    },
-    "require": {}
-}
