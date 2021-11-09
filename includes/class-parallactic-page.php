@@ -1,5 +1,4 @@
 <?php
-use \Parallactic_ACF_REST;
 
 class Parallactic_Page {
     private $acf_rest;
