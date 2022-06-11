@@ -129,6 +129,11 @@ class Parallactic {
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-parallactic-meta.php';
 
 		/**
+		 * The class responsible close security vulnerability
+		 */
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-parallactic-security.php';
+
+		/**
 		 * The class responsible for all content fields for pages
 		 */
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-parallactic-page.php';
@@ -148,7 +153,8 @@ class Parallactic {
 		 */
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-parallactic-person.php';
 
-        new Parallactic_Meta();
+		new Parallactic_Meta();
+		new Parallactic_Security();
 		new Parallactic_Page();
 		new Parallactic_ACF_REST();
 		new Parallactic_Contact_Form();
