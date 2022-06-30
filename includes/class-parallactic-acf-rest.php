@@ -2,6 +2,8 @@
 
 class Parallactic_ACF_REST
 {
+    protected $max_recursive_level = 3;
+    protected $current_recursive_level = 0;
 
     public function __construct()
     {
@@ -49,6 +51,12 @@ class Parallactic_ACF_REST
      */
     public function add_acf_fields($post_id)
     {
+        // prevent infinity loop
+        $this->current_recursive_level++;
+        if ($this->current_recursive_level >= $this->max_recursive_level) {
+            return;
+        }
+
         $returnData = array();
         $fields = get_fields($post_id);
 
