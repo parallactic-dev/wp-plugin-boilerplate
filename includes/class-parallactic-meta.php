@@ -6,6 +6,7 @@ class Parallactic_Meta {
         add_action('acf/init', array($this, 'add_custom_fields'));
         add_action('rest_api_init', array($this, 'register_rest_endpoints'));
         add_action('init', array($this, 'register_menues'), 100);
+        add_action('preview_post_link', array($this, 'preview_fix'), 10, 2);
 
         $this->add_image_sizes();
 
@@ -232,6 +233,11 @@ class Parallactic_Meta {
         foreach($fields as $field) {
             $meta[$field] = get_option($field);
         }
+
+        //  fields from custom options page
+        $meta['footer'] = get_field('footer', 'option');
+        $meta['cookie_banner'] = get_field('cookie_banner', 'option');
+        
         return new WP_REST_Response($meta, 200);
     }
 
@@ -257,6 +263,11 @@ class Parallactic_Meta {
         }
 
         return new WP_REST_Response($map, 200);
+    }
+
+    public function preview_fix($link, $post) {
+        $slug = basename(get_permalink());
+        return get_home_url() . "/preview/$post->ID";
     }
 
     private function add_image_sizes() {

@@ -153,12 +153,18 @@ class Parallactic {
 		 */
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-parallactic-person.php';
 
+		/**
+		 * The class responsible to create an option page
+		 */
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-parallactic-options.php';
+
 		new Parallactic_Meta();
 		new Parallactic_Security();
 		new Parallactic_Page();
 		new Parallactic_ACF_REST();
 		new Parallactic_Contact_Form();
 		new Parallactic_Person();
+		new Parallactic_Options();
 		
 		$this->loader = new Parallactic_Loader();
 
@@ -194,6 +200,7 @@ class Parallactic {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_filter( 'the_content', $this, 'filter_content', 10, 1 );
 
 	}
 
@@ -259,17 +266,31 @@ class Parallactic {
 	 * @since     1.0.0
 	 * @param     PHPMailer $mailer
 	 */
-	public function mailer_config(PHPMailer $mailer) {
-        $mailer->IsSMTP();
-        $mailer->Host = 'smtp.postmarkapp.com';
-        $mailer->Port = 587;
-        $mailer->SMTPAuth = true;
-        $mailer->Username = '00000000-0000-0000-0000-000000000000';
-        $mailer->Password = '00000000-0000-0000-0000-000000000000';
-        $mailer->SMTPSecure = 'tls';
-        $mailer->AuthType = 'PLAIN';
-        $mailer->SMTPDebug = 0;
-        $mailer->CharSet  = 'utf-8';
-    }
+	public function mailer_config(PHPMailer $mailer) 
+	{
+		$mailer->IsSMTP();
+		$mailer->Host = 'smtp.postmarkapp.com';
+		$mailer->Port = 587;
+		$mailer->SMTPAuth = true;
+		$mailer->Username = '00000000-0000-0000-0000-000000000000';
+		$mailer->Password = '00000000-0000-0000-0000-000000000000';
+		$mailer->SMTPSecure = 'tls';
+		$mailer->AuthType = 'PLAIN';
+		$mailer->SMTPDebug = 0;
+		$mailer->CharSet  = 'utf-8';
+	}
+
+	/**
+	 * Set site url to frontend url
+	 *
+	 * @since     1.0.0
+	 * @param     String $mailer
+	 */
+	public function filter_content($content) 
+	{
+
+		return str_replace('http://wordpress.test', '', $content);
+
+	}
 
 }
